@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helloword - Language Learning Dashboard</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
     <div class="sidebar" id="sidebar">
         <!-- Sidebar content remains the same -->
         <div class="sidebar-header">
-            <h1 class="logo mb-0"><i class="bi bi-person-raised-hand"></i> Helloword</h1>
+            <h1 class="logo mb-0"><i class="bi bi-person-raised-hand"></i> Hello</h1>
             <button class="btn d-lg-none" id="sidebar-close-btn"><i class="bi bi-x-lg"></i></button>
         </div>
         
@@ -77,15 +77,13 @@
                  <button class="btn d-lg-none me-2" id="sidebar-toggle-btn">
                     <i class="bi bi-list"></i>
                 </button>
-                <div>
-                    <h3 class="greeting">Günaydın, Jon</h3>
+                <div class="header-welcome-name">
+                    <h3 class="greeting">Günaydın, Jai</h3>
                     <p class="text-muted mb-0">Welcome back, nice to see you again!</p>
                 </div>
             </div>
 
-            <!-- UPDATED: Header Icons with Dropdowns -->
             <div class="user-profile d-flex align-items-center">
-                <!-- Notification Dropdown -->
                 <div class="dropdown me-3">
                     <a href="#" class="notification-bell" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-bell-fill"></i>
@@ -124,10 +122,10 @@
                 <!-- Profile Dropdown -->
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="img/avatar.jpg" alt="Jon Pantau" class="avatar">
+                        <img src="img/user.jpg" alt="Jai" class="avatar">
                         <div class="ms-3 d-none d-lg-block">
-                            <p class="fw-bold mb-0">Jon Pantau</p>
-                            <small class="text-muted">Turkish Baby</small>
+                            <p class="fw-bold mb-0">Jai</p>
+                            <small class="text-muted">Admin</small>
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -163,7 +161,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Hours Spent</h5>
                                 <!-- UPDATED: Canvas for Chart.js -->
-                                <canvas id="hoursSpentChar" style="height: 120px;"></canvas>
+                                <canvas id="hoursSpentChart" style="height: 120px;"></canvas>
                             </div>
                         </div>
                     </div>
@@ -183,7 +181,7 @@
                  <h4 class="section-title">My Schedule</h4>
                  <div class="card"><div class="card-body"><div class="schedule-item"><div class="icon-box bg-warning-subtle text-warning-emphasis"><i class="bi bi-award"></i></div><div class="ms-3"><p class="fw-bold mb-0">Turkish A2 Exam</p><small class="text-muted"><i class="bi bi-calendar3"></i> August 9, 2020</small></div></div><div class="schedule-item"><div class="icon-box bg-info-subtle text-info-emphasis"><i class="bi bi-headphones"></i></div><div class="ms-3"><p class="fw-bold mb-0">Listening 30 Minute</p><small class="text-muted"><i class="bi bi-calendar3"></i> August 11, 2020</small></div></div><div class="schedule-item"><div class="icon-box bg-warning-subtle text-warning-emphasis"><i class="bi bi-book"></i></div><div class="ms-3"><p class="fw-bold mb-0">Reading Turkish Blog</p><small class="text-muted"><i class="bi bi-calendar3"></i> August 13, 2020</small></div></div></div></div>
                  <h4 class="section-title mt-4">Friends</h4>
-                 <div class="card"><div class="card-body"><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Jacob Jones</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Sammuel Ethan</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Eleanor Pena</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Annette Black</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div></div></div>
+                 <div class="card"><div class="card-body"><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Jacob Jaies</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Sammuel Ethan</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Eleanor Pena</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Annette Black</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div></div></div>
             </div>
         </div>
     </div>
@@ -271,9 +269,14 @@ a {
     .sidebar { transform: translateX(-100%); box-shadow: 0 0 15px rgba(0,0,0,0.1); }
     .sidebar.show { transform: translateX(0); }
     .main-content { margin-left: 0; }
-    .header { flex-wrap: wrap; }
+    /* .header { flex-wrap: wrap; } */
     .user-profile { margin-top: 1rem; width: 100%; justify-content: flex-end; }
+    .header-welcome-name{display: none;}
 }
+#hoursSpentChart {
+    height: 250px !important;
+}
+
 
 
 </style>
@@ -375,4 +378,4 @@ document.addEventListener("DOMContentLoaded", function() {
     <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
