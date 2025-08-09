@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helloword - Language Learning Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <!-- Sidebar content remains the same -->
+        <div class="sidebar-header">
+            <h1 class="logo mb-0"><i class="bi bi-person-raised-hand"></i> Helloword</h1>
+            <button class="btn d-lg-none" id="sidebar-close-btn"><i class="bi bi-x-lg"></i></button>
+        </div>
+        
+        <h2 class="menu-title mt-4 mb-3">Menu</h2>
+        <ul class="nav flex-column menu-list">
+            <li class="nav-item">
+                <a class="nav-link active" href="#"><i class="bi bi-grid-1x2-fill"></i> Overview</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#coursesSubmenu" role="button" aria-expanded="false" aria-controls="coursesSubmenu">
+                    <span><i class="bi bi-journal-bookmark-fill"></i> Courses</span>
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <div class="collapse" id="coursesSubmenu">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"><a class="nav-link" href="#">My Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Browse New</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Completed</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-bar-chart-line-fill"></i> Statistic</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-trophy-fill"></i> Leaderboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-envelope-fill"></i> Message</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-gear-fill"></i> Setting</a>
+            </li>
+        </ul>
+
+        <div class="upgrade-plan-card mt-auto">
+            <p class="fw-bold">Upgrade your plan</p>
+            <a href="#" class="btn btn-sm btn-upgrade">Learn more <i class="bi bi-arrow-right-circle-fill"></i></a>
+        </div>
+    </div>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <!-- Header -->
+        <div class="header d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center">
+                 <button class="btn d-lg-none me-2" id="sidebar-toggle-btn">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div>
+                    <h3 class="greeting">Günaydın, Jon</h3>
+                    <p class="text-muted mb-0">Welcome back, nice to see you again!</p>
+                </div>
+            </div>
+
+            <!-- UPDATED: Header Icons with Dropdowns -->
+            <div class="user-profile d-flex align-items-center">
+                <!-- Notification Dropdown -->
+                <div class="dropdown me-3">
+                    <a href="#" class="notification-bell" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-bell-fill"></i>
+                        <span class="notification-dot"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end notification-dropdown">
+                        <li><h6 class="dropdown-header">Notifications</h6></li>
+                        <li><a class="dropdown-item d-flex align-items-start" href="#">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            <div>
+                                <p class="mb-0">You completed "Turkish A2 Exam".</p>
+                                <small class="text-muted">1 hour ago</small>
+                            </div>
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item d-flex align-items-start" href="#">
+                            <i class="bi bi-exclamation-circle-fill text-warning me-2"></i>
+                            <div>
+                                <p class="mb-0">Your "Listening 30 Minute" is due today.</p>
+                                <small class="text-muted">4 hours ago</small>
+                            </div>
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                         <li><a class="dropdown-item d-flex align-items-start" href="#">
+                            <i class="bi bi-person-plus-fill text-info me-2"></i>
+                            <div>
+                                <p class="mb-0">Sammuel Ethan sent you a message.</p>
+                                <small class="text-muted">1 day ago</small>
+                            </div>
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-center" href="#">View all notifications</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Profile Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="img/avatar.jpg" alt="Jon Pantau" class="avatar">
+                        <div class="ms-3 d-none d-lg-block">
+                            <p class="fw-bold mb-0">Jon Pantau</p>
+                            <small class="text-muted">Turkish Baby</small>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person-circle me-2"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i> Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Left Content Area -->
+            <div class="col-lg-8">
+                <!-- Overview Cards -->
+                <h4 class="section-title">Overview</h4>
+                <div class="row g-3 mb-4">
+                    <!-- Cards remain the same -->
+                    <div class="col-md-4"><div class="card overview-card vocab-card"><div class="card-body"><p class="card-title-small">Vocabulary</p><h4 class="card-text-big">280</h4><p class="mb-0">Words</p></div></div></div>
+                    <div class="col-md-4"><div class="card overview-card grammar-card"><div class="card-body"><p class="card-title-small">Grammar</p><h4 class="card-text-big">280</h4><p class="mb-0">Words</p></div></div></div>
+                    <div class="col-md-4"><div class="card overview-card score-card"><div class="card-body"><p class="card-title-small">Score</p><h4 class="card-text-big">1250</h4><p class="mb-0">Points</p></div></div></div>
+                </div>
+                
+                <!-- Level and Hours -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <!-- Level Card remains the same -->
+                        <div class="card"><div class="card-body"><h5 class="card-title">Your Level <span class="badge bg-secondary-subtle text-dark-emphasis float-end">A2</span></h5><div class="d-flex align-items-center mt-3"><div class="progress-circle me-3"><span>78%</span></div><div class="level-details"><p class="mb-1"><span class="dot reading"></span> Reading</p><p class="mb-0"><span class="dot listening"></span> Listening</p></div></div></div></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Hours Spent</h5>
+                                <!-- UPDATED: Canvas for Chart.js -->
+                                <canvas id="hoursSpentChar" style="height: 120px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Language Leaderboard -->
+                <h4 class="section-title">Language Leaderboard</h4>
+                <div class="card">
+                    <!-- Leaderboard content remains the same -->
+                     <div class="card-body"><div class="leaderboard-item rank-1"><span>1</span><img src="img/avatar.jpg" class="avatar-sm"><span>Jerome Bell</span><span class="text-muted">Turkish Star Master</span><span class="fw-bold">5520 points</span></div><div class="leaderboard-item"><span>2</span><img src="img/avatar.jpg" class="avatar-sm"><span>Courtney Henry</span><span class="text-muted">Turkish Certified</span><span class="fw-bold">5140 points</span></div><div class="leaderboard-item"><span>3</span><img src="img/avatar.jpg" class="avatar-sm"><span>Arlene McCoy</span><span class="text-muted">Turkish Specialist</span><span class="fw-bold">4780 points</span></div><div class="leaderboard-item"><span>4</span><img src="img/avatar.jpg" class="avatar-sm"><span>Darrell Steward</span><span class="text-muted">Turkish Specialist</span><span class="fw-bold">4520 points</span></div></div>
+                </div>
+            </div>
+
+            <!-- Right Content Area -->
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                <!-- Schedule and Friends remain the same -->
+                 <h4 class="section-title">My Schedule</h4>
+                 <div class="card"><div class="card-body"><div class="schedule-item"><div class="icon-box bg-warning-subtle text-warning-emphasis"><i class="bi bi-award"></i></div><div class="ms-3"><p class="fw-bold mb-0">Turkish A2 Exam</p><small class="text-muted"><i class="bi bi-calendar3"></i> August 9, 2020</small></div></div><div class="schedule-item"><div class="icon-box bg-info-subtle text-info-emphasis"><i class="bi bi-headphones"></i></div><div class="ms-3"><p class="fw-bold mb-0">Listening 30 Minute</p><small class="text-muted"><i class="bi bi-calendar3"></i> August 11, 2020</small></div></div><div class="schedule-item"><div class="icon-box bg-warning-subtle text-warning-emphasis"><i class="bi bi-book"></i></div><div class="ms-3"><p class="fw-bold mb-0">Reading Turkish Blog</p><small class="text-muted"><i class="bi bi-calendar3"></i> August 13, 2020</small></div></div></div></div>
+                 <h4 class="section-title mt-4">Friends</h4>
+                 <div class="card"><div class="card-body"><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Jacob Jones</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Sammuel Ethan</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Eleanor Pena</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div><div class="friend-item"><div class="d-flex align-items-center"><img src="img/avatar.jpg" class="avatar-sm"><span class="ms-3">Annette Black</span></div><a href="#" class="text-warning"><i class="bi bi-send-fill"></i></a></div></div></div>
+            </div>
+        </div>
+    </div>
+    
+<style>
+:root {
+    --sidebar-width: 280px;
+}
+
+/* General Styling */
+body {
+    background-color: #FFF7F0;
+    font-family: 'Poppins', sans-serif;
+    color: #4A4A4A;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+
+/* Sidebar */
+.sidebar { position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh; background-color: #ffffff; padding: 1.5rem; display: flex; flex-direction: column; z-index: 1050; transition: transform 0.3s ease-in-out; }
+.sidebar-header { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 700; color: #333; }
+.logo .bi { color: #F98D35; }
+.menu-title { font-size: 0.9rem; font-weight: 600; color: #a0a0a0; text-transform: uppercase; letter-spacing: 1px; }
+.menu-list .nav-link { color: #888; padding: 12px 15px; margin-bottom: 5px; border-radius: 10px; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; }
+.menu-list .nav-link i { margin-right: 15px; font-size: 1.2rem; }
+.menu-list .nav-link:hover { background-color: #FFF7F0; color: #F98D35; }
+.menu-list .nav-link.active { background-color: #FFEFE0; color: #F98D35; font-weight: 600; }
+.sub-menu { padding-left: 20px; }
+.sub-menu .nav-link { padding-left: 30px; font-size: 0.9rem; }
+.menu-list a[data-bs-toggle="collapse"] .bi-chevron-down { transition: transform 0.3s ease; }
+.menu-list a[data-bs-toggle="collapse"][aria-expanded="true"] .bi-chevron-down { transform: rotate(180deg); }
+.upgrade-plan-card { background-color: #FFF7F0; border-radius: 15px; padding: 20px; text-align: center; }
+.btn-upgrade { background-color: #F98D35; color: white; border-radius: 20px; padding: 5px 15px; }
+.btn-upgrade:hover { background-color: #e07b2d; color: white; }
+
+/* Main Content */
+.main-content { background-color: #F9FAFC; min-height: 100vh; padding: 1.5rem; margin-left: var(--sidebar-width); transition: margin-left 0.3s ease-in-out; }
+#sidebar-toggle-btn i { font-size: 1.5rem; }
+.greeting { font-weight: 600; }
+.avatar { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
+.avatar-sm { width: 35px; height: 35px; border-radius: 50%; object-fit: cover; }
+
+/* Header Dropdowns */
+.user-profile .dropdown-toggle::after { display: none; }
+.notification-bell { position: relative; font-size: 1.3rem; color: #555; }
+.notification-dot { position: absolute; top: 0; right: 0; width: 8px; height: 8px; background-color: #dc3545; border-radius: 50%; border: 2px solid #F9FAFC;}
+.notification-dropdown { min-width: 320px; }
+.notification-dropdown .dropdown-item p { white-space: normal; font-size: 0.9rem; }
+
+.section-title { font-weight: 600; font-size: 1.2rem; margin-bottom: 1rem; }
+.card { border: none; border-radius: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03); padding: 1rem; }
+.overview-card { border-radius: 20px; color: white; position: relative; overflow: hidden; }
+.overview-card::after { content: ''; position: absolute; bottom: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1); }
+.vocab-card { background: #fca951; }
+.grammar-card { background: #52c29a; }
+.score-card { background: #52a9d8; }
+.card-title-small { font-size: 0.9rem; margin-bottom: 0.5rem; }
+.card-text-big { font-size: 2rem; font-weight: 700; margin-bottom: 0; }
+
+/* Level and Hours Cards */
+.progress-circle { width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center; background: conic-gradient(#52c29a 0% 78%, #e9ecef 78% 100%); }
+.progress-circle span { width: 65px; height: 65px; border-radius: 50%; background: #fff; display: flex; justify-content: center; align-items: center; font-weight: 600; font-size: 1.2rem; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; }
+.dot.reading { background-color: #52c29a; }
+.dot.listening { background-color: #e9ecef; }
+
+/* Leaderboard */
+.leaderboard-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; border-radius: 10px; margin-bottom: 8px; font-size: 0.9rem; }
+.leaderboard-item.rank-1 { background-color: #FFF7F0; font-weight: 600; }
+
+/* Right Column: Schedule & Friends */
+.schedule-item, .friend-item { display: flex; align-items: center; margin-bottom: 1.5rem; }
+.friend-item { justify-content: space-between; margin-bottom: 1rem; }
+.icon-box { width: 45px; height: 45px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.3rem; }
+
+/* Mobile Overlay */
+.sidebar-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1040; display: none; }
+.sidebar-overlay.active { display: block; }
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .sidebar { transform: translateX(-100%); box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    .sidebar.show { transform: translateX(0); }
+    .main-content { margin-left: 0; }
+    .header { flex-wrap: wrap; }
+    .user-profile { margin-top: 1rem; width: 100%; justify-content: flex-end; }
+}
+
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // --- Sidebar Toggle Logic ---
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggleBtn = document.getElementById('sidebar-toggle-btn');
+    const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+    const showSidebar = () => {
+        sidebar.classList.add('show');
+        sidebarOverlay.classList.add('active');
+    };
+
+    const hideSidebar = () => {
+        sidebar.classList.remove('show');
+        sidebarOverlay.classList.remove('active');
+    };
+
+    if (sidebarToggleBtn) {
+        sidebarToggleBtn.addEventListener('click', showSidebar);
+    }
+    if (sidebarCloseBtn) {
+        sidebarCloseBtn.addEventListener('click', hideSidebar);
+    }
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', hideSidebar);
+    }
+
+    // --- Chart.js: Hours Spent Chart ---
+    const ctx = document.getElementById('hoursSpentChart');
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                datasets: [{
+                    label: 'Hours Spent',
+                    data: [1.5, 2.5, 4.5, 3, 2, 1.7, 1], // Sample data in hours
+                    backgroundColor: '#fca951',
+                    borderColor: '#fca951',
+                    borderRadius: 5,
+                    borderWidth: 0,
+                    barThickness: 15,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        display: false // Hides the Y-axis labels and grid lines
+                    },
+                    x: {
+                        grid: {
+                            display: false // Hides the X-axis grid lines
+                        },
+                         ticks: {
+                            color: '#aaa' // Sets color for x-axis labels (Su, Mo, etc.)
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false // Hides the legend
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += context.parsed.y + ' hours';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+});
+
+</script>
+
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
